@@ -13,6 +13,9 @@
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -54,7 +57,6 @@
             font-family: 'Poppins', sans-serif;
         }
         
-        /* Glassmorphism */
         .glass {
             background: rgba(20, 20, 20, 0.4);
             backdrop-filter: blur(12px);
@@ -231,18 +233,6 @@
             border-bottom: 1px solid rgba(229, 184, 59, 0.1);
         }
         
-        .project-img-placeholder {
-            background: linear-gradient(145deg, #1c1a1a, #2a2727);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #6b6b6b;
-            font-size: 0.9rem;
-            min-height: 160px;
-            border: 1px solid rgba(229, 184, 59, 0.1);
-        }
-        
         .fade-up {
             opacity: 0;
             transform: translateY(30px);
@@ -254,7 +244,6 @@
             transform: translateY(0);
         }
         
-        /* Profile image float animation */
         @keyframes float {
             0%, 100% {
                 transform: translateY(0px);
@@ -268,7 +257,6 @@
             animation: float 4s ease-in-out infinite;
         }
         
-        /* Gold glow shadow */
         .gold-glow {
             box-shadow: 0 0 40px rgba(229, 184, 59, 0.15), 0 0 80px rgba(229, 184, 59, 0.05);
         }
@@ -301,7 +289,6 @@
                 <i class="fas fa-bars"></i>
             </button>
         </div>
-        <!-- Mobile menu -->
         <div id="mobileMenu" class="hidden md:hidden mobile-menu flex flex-col p-4 space-y-2">
             <a href="#home" class="nav-link active text-base py-2 px-3" data-section="home">Home</a>
             <a href="#about" class="nav-link text-base py-2 px-3" data-section="about">About</a>
@@ -323,7 +310,6 @@
                 <div class="particle w-48 h-48 top-1/2 left-1/2"></div>
             </div>
             <div class="max-w-6xl mx-auto w-full relative z-10 grid lg:grid-cols-2 gap-8 md:gap-12 items-center py-12 md:py-16 lg:py-20">
-                <!-- Left side - Text content -->
                 <div class="fade-up visible order-2 lg:order-1">
                     <div class="flex flex-col space-y-4 md:space-y-5">
                         <span class="text-gold font-medium text-sm tracking-widest uppercase">Welcome</span>
@@ -337,7 +323,9 @@
                             I am a passionate Computer Science graduate with a strong interest in Cybersecurity and modern web technologies. I enjoy building user-friendly web applications, solving real-world problems, and continuously learning new technologies. My goal is to pursue a successful career in Cybersecurity while contributing to innovative and secure digital solutions.
                         </p>
                         <div class="flex flex-wrap gap-3 sm:gap-4 pt-2">
-                            <a href="#" class="btn-gold px-5 sm:px-6 py-2.5 sm:py-3 rounded-full flex items-center gap-2 bounce-btn text-xs sm:text-sm font-medium">
+                            <a href="Syeda_Itrat_Fatima_CV.pdf.pdf"
+                               download="Syeda_Itrat_Fatima_CV.pdf"
+                               class="btn-gold px-5 sm:px-6 py-2.5 sm:py-3 rounded-full flex items-center gap-2 bounce-btn text-xs sm:text-sm font-medium">
                                 <i class="fas fa-download"></i> Download CV
                             </a>
                             <a href="#contact" class="btn-outline-gold px-5 sm:px-6 py-2.5 sm:py-3 rounded-full flex items-center gap-2 text-xs sm:text-sm font-medium">
@@ -345,28 +333,25 @@
                             </a>
                         </div>
                         <div class="flex gap-4 pt-2">
-                            <a href="#" class="text-gray-400 hover:text-gold transition text-xl sm:text-2xl"><i class="fab fa-github"></i></a>
-                            <a href="#" class="text-gray-400 hover:text-gold transition text-xl sm:text-2xl"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" class="text-gray-400 hover:text-gold transition text-xl sm:text-2xl"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="text-gray-400 hover:text-gold transition text-xl sm:text-2xl"><i class="fas fa-envelope"></i></a>
+                            <a href="https://github.com/syed123-sudo" target="_blank" class="text-gray-400 hover:text-gold transition text-xl sm:text-2xl">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-gold transition text-xl sm:text-2xl">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="mailto:ifsyed66@gmail.com" class="text-gray-400 hover:text-gold transition text-xl sm:text-2xl">
+                                <i class="fas fa-envelope"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Right side - Profile Image (Redesigned) -->
                 <div class="flex justify-center items-center order-1 lg:order-2">
                     <div class="profile-float">
                         <div class="relative">
-                            <!-- Outer glow ring -->
                             <div class="absolute inset-0 rounded-full gold-glow blur-2xl opacity-60"></div>
-                            
-                            <!-- Main container with premium golden border -->
                             <div class="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full border-[3px] md:border-4 border-gold/60 p-1.5 md:p-2 shadow-2xl shadow-gold/20 bg-gradient-to-br from-gold/10 to-transparent">
-                                
-                                <!-- Inner ring decorative border -->
                                 <div class="absolute inset-0 rounded-full border border-gold/20 pointer-events-none"></div>
-                                
-                                <!-- Image container -->
                                 <div class="w-full h-full rounded-full overflow-hidden bg-dark/50">
                                     <img 
                                         src="profile.jpg.jpeg" 
@@ -374,15 +359,11 @@
                                         class="w-full h-full object-cover object-center scale-105"
                                     />
                                 </div>
-                                
-                                <!-- Decorative corner accents -->
                                 <div class="absolute -top-1 -right-1 w-4 h-4 md:w-5 md:h-5 border-t-2 border-r-2 border-gold/40 rounded-tr-lg"></div>
                                 <div class="absolute -bottom-1 -left-1 w-4 h-4 md:w-5 md:h-5 border-b-2 border-l-2 border-gold/40 rounded-bl-lg"></div>
                                 <div class="absolute -top-1 -left-1 w-4 h-4 md:w-5 md:h-5 border-t-2 border-l-2 border-gold/40 rounded-tl-lg"></div>
                                 <div class="absolute -bottom-1 -right-1 w-4 h-4 md:w-5 md:h-5 border-b-2 border-r-2 border-gold/40 rounded-br-lg"></div>
                             </div>
-                            
-                            <!-- Glowing ring particles -->
                             <div class="absolute -inset-4 rounded-full border border-gold/10 animate-pulse"></div>
                         </div>
                     </div>
@@ -409,12 +390,12 @@
             </div>
             <div class="flex flex-col md:flex-row gap-8 max-w-4xl mx-auto">
                 <div class="glass-card p-6 rounded-2xl flex-1 border-l-4 border-gold fade-up">
-                    <h3 class="text-xl font-poppins font-semibold text-gold">Bachelor of Science in Computer Science</h3>
+                    <h3 class="text-xl font-poppins font-semibold text-gold">Bachelor of Computer Science</h3>
                     <p class="text-gray-400 mt-1">University of Gujrat</p>
                     <p class="text-sm text-gray-500 mt-2">2022 – 2026</p>
                 </div>
                 <div class="glass-card p-6 rounded-2xl flex-1 border-l-4 border-gold fade-up">
-                    <h3 class="text-xl font-poppins font-semibold text-gold">Intermediate (FSc)</h3>
+                    <h3 class="text-xl font-poppins font-semibold text-gold">Intermediate (Ics)</h3>
                     <p class="text-gray-400 mt-1">Punjab College</p>
                     <p class="text-sm text-gray-500 mt-2">2020 – 2022</p>
                 </div>
@@ -467,44 +448,110 @@
                 <div class="glass-card p-6 rounded-2xl fade-up">
                     <h3 class="text-xl font-poppins font-semibold text-gold">GTech Solar Gujrat</h3>
                     <p class="text-gray-300 font-medium">Manager</p>
-                    <p class="text-sm text-gray-500">1 Year</p>
+                    <p class="text-sm text-gray-500">2024-2025</p>
                     <p class="text-gray-400 mt-3 text-sm leading-relaxed">Managed daily stock inventory, tracked incoming/outgoing products, maintained records, coordinated with team, ensured smooth warehouse operations.</p>
                 </div>
                 <div class="glass-card p-6 rounded-2xl fade-up">
                     <h3 class="text-xl font-poppins font-semibold text-gold">State Life Insurance</h3>
                     <p class="text-gray-300 font-medium">Sales Representative</p>
-                    <p class="text-sm text-gray-500">1 Year</p>
+                    <p class="text-sm text-gray-500">2025-TILL NOW</p>
                     <p class="text-gray-400 mt-3 text-sm leading-relaxed">Communicated with clients, promoted insurance services, built customer relationships, achieved sales targets.</p>
                 </div>
             </div>
         </section>
 
         <!-- PROJECTS -->
-        <section id="projects" class="py-20 px-4 md:px-8 max-w-6xl mx-auto">
-            <div class="mb-12 text-center">
-                <h2 class="section-title section-title-center text-3xl md:text-4xl font-poppins">Projects</h2>
+        <section id="projects" class="py-20 px-4 md:px-8 max-w-7xl mx-auto">
+            <div class="mb-14 text-center">
+                <h2 class="section-title section-title-center text-3xl md:text-4xl font-poppins">
+                    My Projects
+                </h2>
+                <p class="text-gray-400 mt-4 max-w-2xl mx-auto text-lg">
+                    A collection of responsive websites built using HTML, CSS, JavaScript, and Tailwind CSS with a focus on clean UI, performance, and user experience.
+                </p>
             </div>
-            <div class="glass-card p-6 md:p-8 rounded-2xl max-w-4xl mx-auto fade-up">
-                <div class="project-img-placeholder mb-4 p-6 text-center">
-                    <span class="text-gold/40">[ Project Screenshot Placeholder ]</span>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <!-- Project 1 -->
+                <div class="bg-[#111111] rounded-3xl overflow-hidden border border-yellow-500/20 transition-all duration-500 hover:-translate-y-3 hover:border-yellow-400/50 hover:shadow-[0_0_40px_rgba(255,215,0,0.25)] group">
+                    <div class="overflow-hidden">
+                        <img src="images/gtech-main.png.PNG" alt="GTECH Main Website" class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-yellow-400">GTECH Main Website</h3>
+                        <p class="text-gray-400 mt-3 leading-relaxed">A modern business website with responsive layouts, smooth interactions, and a professional design.</p>
+                        <div class="flex flex-wrap gap-2 mt-5">
+                            <span class="bg-yellow-500/10 text-yellow-300 px-3 py-1 rounded-full text-xs border border-yellow-500/20">HTML</span>
+                            <span class="bg-yellow-500/10 text-yellow-300 px-3 py-1 rounded-full text-xs border border-yellow-500/20">CSS</span>
+                            <span class="bg-yellow-500/10 text-yellow-300 px-3 py-1 rounded-full text-xs border border-yellow-500/20">JavaScript</span>
+                        </div>
+                        <div class="flex gap-4 mt-6">
+                            <a href="https://mesyed345-tech.github.io/gtech-wesite/" target="_blank" class="flex-1 text-center bg-yellow-400 text-black font-semibold py-3 rounded-xl hover:bg-yellow-300 transition duration-300">Live Demo</a>
+                            <a href="https://github.com/mesyed345-tech/gtech-wesite" target="_blank" class="flex-1 text-center border border-yellow-400 text-yellow-400 font-semibold py-3 rounded-xl hover:bg-yellow-400 hover:text-black transition duration-300">View Code</a>
+                        </div>
+                    </div>
                 </div>
-                <h3 class="text-2xl font-poppins font-semibold text-gold">Portfolio &amp; Frontend Projects Collection</h3>
-                <p class="text-gray-400 mt-2">This repository contains my frontend development projects showcasing responsive layouts, modern UI design, and web development skills. More projects will continue to be added.</p>
-                <div class="flex flex-wrap gap-3 mt-4">
-                    <a href="https://syed123-sudo.github.io/syed123-sudo/" target="_blank" class="btn-gold px-5 py-2 rounded-full text-sm flex items-center gap-2">
-                        <i class="fas fa-external-link-alt"></i> Live Demo
-                    </a>
-                    <a href="#" class="btn-outline-gold px-5 py-2 rounded-full text-sm flex items-center gap-2">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
+
+                <!-- Project 2 -->
+                <div class="bg-[#111111] rounded-3xl overflow-hidden border border-yellow-500/20 transition-all duration-500 hover:-translate-y-3 hover:border-yellow-400/50 hover:shadow-[0_0_40px_rgba(255,215,0,0.25)] group">
+                    <div class="overflow-hidden">
+                        <img src="images/iif-edusolutions.png.PNG" alt="IIF EduSolutions" class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-yellow-400">IIF EduSolutions – Education Platform</h3>
+                        <p class="text-gray-400 mt-3 leading-relaxed">Responsive educational platform with structured content sections and user-friendly navigation.</p>
+                        <div class="flex flex-wrap gap-2 mt-5">
+                            <span class="bg-yellow-500/10 text-yellow-300 px-3 py-1 rounded-full text-xs border border-yellow-500/20">HTML</span>
+                            <span class="bg-yellow-500/10 text-yellow-300 px-3 py-1 rounded-full text-xs border border-yellow-500/20">CSS</span>
+                            <span class="bg-yellow-500/10 text-yellow-300 px-3 py-1 rounded-full text-xs border border-yellow-500/20">JavaScript</span>
+                        </div>
+                        <div class="flex gap-4 mt-6">
+                            <a href="https://syed123-sudo.github.io/iif_EduS0lutions/" target="_blank" class="flex-1 text-center bg-yellow-400 text-black font-semibold py-3 rounded-xl hover:bg-yellow-300 transition duration-300">Live Demo</a>
+                            <a href="https://github.com/syed123-sudo/iif_EduS0lutions" target="_blank" class="flex-1 text-center border border-yellow-400 text-yellow-400 font-semibold py-3 rounded-xl hover:bg-yellow-400 hover:text-black transition duration-300">View Code</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="flex flex-wrap gap-2 mt-4">
-                    <span class="bg-gold/10 text-gold/70 px-3 py-1 rounded-full text-xs border border-gold/10">React</span>
-                    <span class="bg-gold/10 text-gold/70 px-3 py-1 rounded-full text-xs border border-gold/10">Tailwind</span>
-                    <span class="bg-gold/10 text-gold/70 px-3 py-1 rounded-full text-xs border border-gold/10">JavaScript</span>
-                    <span class="bg-gold/10 text-gold/70 px-3 py-1 rounded-full text-xs border border-gold/10">HTML5</span>
-                    <span class="bg-gold/10 text-gold/70 px-3 py-1 rounded-full text-xs border border-gold/10">CSS3</span>
+
+                <!-- Project 3 -->
+                <div class="bg-[#111111] rounded-3xl overflow-hidden border border-yellow-500/20 transition-all duration-500 hover:-translate-y-3 hover:border-yellow-400/50 hover:shadow-[0_0_40px_rgba(255,215,0,0.25)] group">
+                    <div class="overflow-hidden">
+                        <img src="images/gtech-quotation.png.PNG" alt="GTECH Quotation Website" class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-yellow-400">GTECH Quotation Website</h3>
+                        <p class="text-gray-400 mt-3 leading-relaxed">Interactive quotation website designed for generating and presenting business quotations efficiently.</p>
+                        <div class="flex flex-wrap gap-2 mt-5">
+                            <span class="bg-yellow-500/10 text-yellow-300 px-3 py-1 rounded-full text-xs border border-yellow-500/20">HTML</span>
+                            <span class="bg-yellow-500/10 text-yellow-300 px-3 py-1 rounded-full text-xs border border-yellow-500/20">CSS</span>
+                            <span class="bg-yellow-500/10 text-yellow-300 px-3 py-1 rounded-full text-xs border border-yellow-500/20">JavaScript</span>
+                        </div>
+                        <div class="flex gap-4 mt-6">
+                            <a href="https://mesyed345-tech.github.io/gtech-quotation-website/" target="_blank" class="flex-1 text-center bg-yellow-400 text-black font-semibold py-3 rounded-xl hover:bg-yellow-300 transition duration-300">Live Demo</a>
+                            <a href="https://github.com/mesyed345-tech/gtech-quotation-website" target="_blank" class="flex-1 text-center border border-yellow-400 text-yellow-400 font-semibold py-3 rounded-xl hover:bg-yellow-400 hover:text-black transition duration-300">View Code</a>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Project 4 -->
+                <div class="bg-[#111111] rounded-3xl overflow-hidden border border-yellow-500/20 transition-all duration-500 hover:-translate-y-3 hover:border-yellow-400/50 hover:shadow-[0_0_40px_rgba(255,215,0,0.25)] group">
+                    <div class="overflow-hidden">
+                        <img src="images/gtech-website.png.PNG" alt="GTECH Website" class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-yellow-400">GTECH Website</h3>
+                        <p class="text-gray-400 mt-3 leading-relaxed">Clean and responsive company website focused on accessibility, readability, and performance.</p>
+                        <div class="flex flex-wrap gap-2 mt-5">
+                            <span class="bg-yellow-500/10 text-yellow-300 px-3 py-1 rounded-full text-xs border border-yellow-500/20">HTML</span>
+                            <span class="bg-yellow-500/10 text-yellow-300 px-3 py-1 rounded-full text-xs border border-yellow-500/20">CSS</span>
+                        </div>
+                        <div class="flex gap-4 mt-6">
+                            <a href="https://syed123-sudo.github.io/GTECH/" target="_blank" class="flex-1 text-center bg-yellow-400 text-black font-semibold py-3 rounded-xl hover:bg-yellow-300 transition duration-300">Live Demo</a>
+                            <a href="https://github.com/syed123-sudo/GTECH" target="_blank" class="flex-1 text-center border border-yellow-400 text-yellow-400 font-semibold py-3 rounded-xl hover:bg-yellow-400 hover:text-black transition duration-300">View Code</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -529,21 +576,24 @@
                     </div>
                     <div class="flex items-center gap-4">
                         <i class="fab fa-github text-2xl text-gold"></i>
-                        <a href="#" class="hover:text-gold">syed123-sudo</a>
+                        <a href="https://github.com/syed123-sudo" target="_blank" class="hover:text-gold">syed123-sudo</a>
                     </div>
                     <div class="flex gap-4 pt-2">
-                        <a href="#" class="text-gray-400 hover:text-gold transition text-3xl"><i class="fab fa-github"></i></a>
+                        <a href="https://github.com/syed123-sudo" target="_blank" class="text-gray-400 hover:text-gold transition text-3xl"><i class="fab fa-github"></i></a>
                         <a href="#" class="text-gray-400 hover:text-gold transition text-3xl"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#" class="text-gray-400 hover:text-gold transition text-3xl"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
                 <div class="glass-card p-6 rounded-2xl fade-up">
-                    <form class="space-y-4">
-                        <input type="text" placeholder="Name" class="w-full bg-dark/60 border border-gold/20 rounded-xl px-4 py-3 text-gray-200 focus:border-gold/60 focus:outline-none" />
-                        <input type="email" placeholder="Email" class="w-full bg-dark/60 border border-gold/20 rounded-xl px-4 py-3 text-gray-200 focus:border-gold/60 focus:outline-none" />
-                        <input type="text" placeholder="Subject" class="w-full bg-dark/60 border border-gold/20 rounded-xl px-4 py-3 text-gray-200 focus:border-gold/60 focus:outline-none" />
-                        <textarea rows="4" placeholder="Message" class="w-full bg-dark/60 border border-gold/20 rounded-xl px-4 py-3 text-gray-200 focus:border-gold/60 focus:outline-none"></textarea>
-                        <button type="submit" class="btn-gold w-full py-3 rounded-xl font-medium">Send Message</button>
+                    <form id="contactForm" class="space-y-4">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required class="w-full bg-dark/60 border border-gold/20 rounded-xl px-4 py-3 text-gray-200 focus:border-gold/60 focus:outline-none" />
+                        <input type="email" id="from_email" name="from_email" placeholder="Your Email" required class="w-full bg-dark/60 border border-gold/20 rounded-xl px-4 py-3 text-gray-200 focus:border-gold/60 focus:outline-none" />
+                        <input type="text" id="title" name="title" placeholder="Subject" required class="w-full bg-dark/60 border border-gold/20 rounded-xl px-4 py-3 text-gray-200 focus:border-gold/60 focus:outline-none" />
+                        <textarea rows="4" id="message" name="message" placeholder="Your Message" required class="w-full bg-dark/60 border border-gold/20 rounded-xl px-4 py-3 text-gray-200 focus:border-gold/60 focus:outline-none"></textarea>
+                        <button type="submit" id="submitBtn" class="btn-gold w-full py-3 rounded-xl font-medium">
+                            <i class="fas fa-paper-plane mr-2"></i>Send Message
+                        </button>
+                        <div id="formStatus" class="text-center text-sm mt-2"></div>
                     </form>
                 </div>
             </div>
@@ -561,6 +611,79 @@
     </button>
 
     <script>
+        // Initialize EmailJS with your Public Key
+        (function() {
+            try {
+                emailjs.init('kjtMbPwUtAMNQaqcS');
+                console.log('✅ EmailJS initialized successfully');
+            } catch (error) {
+                console.error('❌ EmailJS initialization failed:', error);
+            }
+        })();
+
+        // Contact Form Handler
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const statusDiv = document.getElementById('formStatus');
+            
+            // Get form data
+            const name = document.getElementById('name').value.trim();
+            const from_email = document.getElementById('from_email').value.trim();
+            const title = document.getElementById('title').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            // Validate form
+            if (!name || !from_email || !title || !message) {
+                statusDiv.innerHTML = '⚠️ Please fill in all fields.';
+                statusDiv.className = 'text-center text-sm mt-2 text-yellow-400';
+                return;
+            }
+            
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
+            submitBtn.disabled = true;
+            statusDiv.innerHTML = '';
+            statusDiv.className = 'text-center text-sm mt-2';
+            
+            // Prepare template parameters matching your template variables
+            const templateParams = {
+                from_email: from_email,    // This goes to the "To Email" field in your template
+                title: title,              // This goes to the "Subject" field
+                name: name,                // This goes in the email content
+                message: message           // This goes in the email content
+            };
+            
+            console.log('📧 Sending email with params:', templateParams);
+            
+            // Send email using EmailJS
+            emailjs.send('service_n8cn6po', 'template_9uvdlq6', templateParams)
+                .then(function(response) {
+                    console.log('✅ SUCCESS!', response.status, response.text);
+                    statusDiv.innerHTML = '✅ Message sent successfully! Check your email for confirmation.';
+                    statusDiv.className = 'text-center text-sm mt-2 text-green-400';
+                    document.getElementById('contactForm').reset();
+                    submitBtn.innerHTML = '<i class="fas fa-paper-plane mr-2"></i>Send Message';
+                    submitBtn.disabled = false;
+                })
+                .catch(function(error) {
+                    console.error('❌ FAILED:', error);
+                    
+                    let errorMessage = '❌ Failed to send message. ';
+                    if (error.text) {
+                        errorMessage += `Error: ${error.text}`;
+                    } else {
+                        errorMessage += 'Please try again or email me directly at ifsyed66@gmail.com';
+                    }
+                    
+                    statusDiv.innerHTML = errorMessage;
+                    statusDiv.className = 'text-center text-sm mt-2 text-red-400';
+                    submitBtn.innerHTML = '<i class="fas fa-paper-plane mr-2"></i>Send Message';
+                    submitBtn.disabled = false;
+                });
+        });
+
         // Mobile menu toggle
         const mobileToggle = document.getElementById('mobileMenuToggle');
         const mobileMenu = document.getElementById('mobileMenu');
