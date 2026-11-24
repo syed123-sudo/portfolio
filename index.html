@@ -4,21 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Syeda Itrat Fatima · Portfolio</title>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    
+
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    
+
     <!-- EmailJS SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <script>
         tailwind.config = {
             theme: {
@@ -42,21 +42,21 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         html {
             scroll-behavior: smooth;
         }
-        
+
         body {
             font-family: 'Inter', sans-serif;
             background: #0b0a0a;
             color: #eaeaea;
         }
-        
+
         .font-poppins {
             font-family: 'Poppins', sans-serif;
         }
-        
+
         .glass {
             background: rgba(20, 20, 20, 0.4);
             backdrop-filter: blur(12px);
@@ -64,7 +64,7 @@
             border: 1px solid rgba(255, 215, 0, 0.15);
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
         }
-        
+
         .glass-card {
             background: rgba(18, 18, 18, 0.6);
             backdrop-filter: blur(8px);
@@ -72,21 +72,21 @@
             border: 1px solid rgba(255, 215, 0, 0.1);
             transition: all 0.3s ease;
         }
-        
+
         .glass-card:hover {
             border-color: rgba(255, 215, 0, 0.4);
             box-shadow: 0 12px 40px rgba(255, 215, 0, 0.05);
             transform: translateY(-4px);
         }
-        
+
         .text-gold {
             color: #e5b83b;
         }
-        
+
         .border-gold {
             border-color: #e5b83b;
         }
-        
+
         .btn-gold {
             background: linear-gradient(135deg, #d4a52e, #b8860b);
             color: #0b0a0a;
@@ -94,13 +94,13 @@
             transition: all 0.3s ease;
             border: none;
         }
-        
+
         .btn-gold:hover {
             transform: scale(1.03);
             box-shadow: 0 8px 30px rgba(212, 165, 46, 0.3);
             background: linear-gradient(135deg, #e5b83b, #c9940a);
         }
-        
+
         .btn-outline-gold {
             background: transparent;
             border: 1.5px solid #e5b83b;
@@ -108,13 +108,13 @@
             font-weight: 500;
             transition: all 0.3s ease;
         }
-        
+
         .btn-outline-gold:hover {
             background: #e5b83b;
             color: #0b0a0a;
             box-shadow: 0 8px 25px rgba(229, 184, 59, 0.15);
         }
-        
+
         .section-title {
             font-size: 2.5rem;
             font-weight: 600;
@@ -122,7 +122,7 @@
             position: relative;
             display: inline-block;
         }
-        
+
         .section-title::after {
             content: '';
             position: absolute;
@@ -133,17 +133,17 @@
             background: linear-gradient(90deg, #e5b83b, #b8860b);
             border-radius: 4px;
         }
-        
+
         .section-title-center::after {
             left: 50%;
             transform: translateX(-50%);
         }
-        
+
         .hero-glow {
             background: radial-gradient(circle at 30% 40%, rgba(229, 184, 59, 0.08) 0%, transparent 60%),
                 radial-gradient(circle at 70% 60%, rgba(229, 184, 59, 0.05) 0%, transparent 50%);
         }
-        
+
         .particle {
             position: absolute;
             border-radius: 50%;
@@ -151,7 +151,7 @@
             filter: blur(20px);
             animation: floatParticle 12s infinite alternate ease-in-out;
         }
-        
+
         @keyframes floatParticle {
             0% {
                 transform: translate(0, 0) scale(1);
@@ -162,11 +162,11 @@
                 opacity: 0.7;
             }
         }
-        
+
         .bounce-btn {
             animation: bounceSoft 2s infinite ease-in-out;
         }
-        
+
         @keyframes bounceSoft {
             0%,
             100% {
@@ -176,7 +176,7 @@
                 transform: translateY(-6px);
             }
         }
-        
+
         #scrollTop {
             position: fixed;
             bottom: 2rem;
@@ -198,17 +198,17 @@
             opacity: 0;
             visibility: hidden;
         }
-        
+
         #scrollTop.visible {
             opacity: 1;
             visibility: visible;
         }
-        
+
         #scrollTop:hover {
             transform: scale(1.08);
             background: #d4a52e;
         }
-        
+
         .nav-link {
             color: #9ca3af;
             transition: all 0.3s ease;
@@ -217,33 +217,33 @@
             font-size: 0.875rem;
             font-weight: 500;
         }
-        
+
         .nav-link:hover {
             color: #e5b83b;
         }
-        
+
         .nav-link.active {
             color: #e5b83b !important;
             border-bottom: 2px solid #e5b83b;
         }
-        
+
         .mobile-menu {
             background: rgba(11, 10, 10, 0.95);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(229, 184, 59, 0.1);
         }
-        
+
         .fade-up {
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.8s ease;
         }
-        
+
         .fade-up.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         @keyframes float {
             0%, 100% {
                 transform: translateY(0px);
@@ -252,18 +252,201 @@
                 transform: translateY(-10px);
             }
         }
-        
+
         .profile-float {
             animation: float 4s ease-in-out infinite;
         }
-        
+
         .gold-glow {
             box-shadow: 0 0 40px rgba(229, 184, 59, 0.15), 0 0 80px rgba(229, 184, 59, 0.05);
         }
-        
+
+        /* ---------- Professional Skills Styling ---------- */
+        .skill-bar {
+            height: 8px;
+            border-radius: 9999px;
+            background: rgba(255, 255, 255, 0.08);
+            overflow: hidden;
+            margin-top: 0.35rem;
+        }
+
+        .skill-bar-fill {
+            height: 100%;
+            border-radius: 9999px;
+            background: linear-gradient(90deg, #b8860b, #e5b83b, #f5d76e);
+            transition: width 1.2s ease-in-out;
+        }
+
+        .skill-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.45rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            background: rgba(229, 184, 59, 0.08);
+            color: #e5b83b;
+            border: 1px solid rgba(229, 184, 59, 0.18);
+            transition: all 0.25s ease;
+        }
+
+        .skill-tag:hover {
+            background: rgba(229, 184, 59, 0.18);
+            border-color: rgba(229, 184, 59, 0.45);
+            transform: translateY(-2px);
+        }
+
+        .skill-tag i {
+            font-size: 0.7rem;
+            opacity: 0.8;
+        }
+
+        .soft-skill-card {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.85rem 1rem;
+            border-radius: 0.85rem;
+            background: rgba(229, 184, 59, 0.05);
+            border: 1px solid rgba(229, 184, 59, 0.12);
+            transition: all 0.25s ease;
+        }
+
+        .soft-skill-card:hover {
+            background: rgba(229, 184, 59, 0.1);
+            border-color: rgba(229, 184, 59, 0.35);
+            transform: translateY(-2px);
+        }
+
+        .soft-skill-card i {
+            color: #e5b83b;
+            font-size: 1rem;
+            width: 1.25rem;
+            text-align: center;
+        }
+
+        /* ---------- Certification Card ---------- */
+        .cert-card {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .cert-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(229, 184, 59, 0.06) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .cert-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #e5b83b;
+            background: rgba(229, 184, 59, 0.1);
+            border: 1px solid rgba(229, 184, 59, 0.25);
+            padding: 0.3rem 0.75rem;
+            border-radius: 9999px;
+        }
+
+        /* ---------- Certificate Modal / Lightbox ---------- */
+        .cert-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            background: rgba(5, 5, 5, 0.92);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .cert-modal.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .cert-modal-inner {
+            position: relative;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+        }
+
+        .cert-modal.open .cert-modal-inner {
+            transform: scale(1);
+        }
+
+        .cert-modal-inner img {
+            width: 100%;
+            height: auto;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 1rem;
+            border: 1px solid rgba(229, 184, 59, 0.35);
+            box-shadow: 0 0 60px rgba(229, 184, 59, 0.2);
+            background: #111;
+        }
+
+        .cert-modal-close {
+            position: absolute;
+            top: -1rem;
+            right: -1rem;
+            width: 2.75rem;
+            height: 2.75rem;
+            border-radius: 50%;
+            background: #e5b83b;
+            color: #0b0a0a;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.25s ease;
+            box-shadow: 0 8px 24px rgba(229, 184, 59, 0.3);
+        }
+
+        .cert-modal-close:hover {
+            transform: scale(1.1) rotate(90deg);
+            background: #f5d76e;
+        }
+
+        .cert-modal-caption {
+            text-align: center;
+            margin-top: 1rem;
+            color: #e5b83b;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
         @media (max-width: 640px) {
             .section-title {
                 font-size: 2rem;
+            }
+            .cert-modal-close {
+                top: -0.75rem;
+                right: -0.75rem;
+                width: 2.25rem;
+                height: 2.25rem;
+                font-size: 1rem;
             }
         }
     </style>
@@ -282,6 +465,7 @@
                 <a href="#education" class="nav-link" data-section="education">Education</a>
                 <a href="#skills" class="nav-link" data-section="skills">Skills</a>
                 <a href="#experience" class="nav-link" data-section="experience">Experience</a>
+                <a href="#certifications" class="nav-link" data-section="certifications">Certifications</a>
                 <a href="#projects" class="nav-link" data-section="projects">Projects</a>
                 <a href="#contact" class="nav-link" data-section="contact">Contact</a>
             </nav>
@@ -295,6 +479,7 @@
             <a href="#education" class="nav-link text-base py-2 px-3" data-section="education">Education</a>
             <a href="#skills" class="nav-link text-base py-2 px-3" data-section="skills">Skills</a>
             <a href="#experience" class="nav-link text-base py-2 px-3" data-section="experience">Experience</a>
+            <a href="#certifications" class="nav-link text-base py-2 px-3" data-section="certifications">Certifications</a>
             <a href="#projects" class="nav-link text-base py-2 px-3" data-section="projects">Projects</a>
             <a href="#contact" class="nav-link text-base py-2 px-3" data-section="contact">Contact</a>
         </div>
@@ -332,7 +517,7 @@
                                 <i class="fas fa-envelope"></i> Contact Me
                             </a>
                         </div>
-                        <!-- SOCIAL ICONS - FIXED LINKEDIN -->
+                        <!-- SOCIAL ICONS -->
                         <div class="flex gap-4 pt-2">
                             <a href="https://github.com/syed123-sudo" target="_blank" class="text-gray-400 hover:text-gold transition text-xl sm:text-2xl">
                                 <i class="fab fa-github"></i>
@@ -342,14 +527,14 @@
                                rel="noopener noreferrer"
                                class="text-gray-400 hover:text-gold transition text-xl sm:text-2xl">
                                 <i class="fab fa-linkedin-in"></i>
-                            </a>    
+                            </a>
                             <a href="mailto:ifsyed66@gmail.com" class="text-gray-400 hover:text-gold transition text-xl sm:text-2xl">
                                 <i class="fas fa-envelope"></i>
                             </a>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="flex justify-center items-center order-1 lg:order-2">
                     <div class="profile-float">
                         <div class="relative">
@@ -357,9 +542,9 @@
                             <div class="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full border-[3px] md:border-4 border-gold/60 p-1.5 md:p-2 shadow-2xl shadow-gold/20 bg-gradient-to-br from-gold/10 to-transparent">
                                 <div class="absolute inset-0 rounded-full border border-gold/20 pointer-events-none"></div>
                                 <div class="w-full h-full rounded-full overflow-hidden bg-dark/50">
-                                    <img 
-                                        src="itrat pic.jpeg" 
-                                        alt="Syeda Itrat Fatima" 
+                                    <img
+                                        src="profile.jpg.jpeg"
+                                        alt="Syeda Itrat Fatima"
                                         class="w-full h-full object-cover object-center scale-105"
                                     />
                                 </div>
@@ -406,40 +591,124 @@
             </div>
         </section>
 
-        <!-- SKILLS -->
+        <!-- ==================== SKILLS (REDESIGNED - PROFESSIONAL) ==================== -->
         <section id="skills" class="py-20 px-4 md:px-8 max-w-6xl mx-auto">
-            <div class="mb-12 text-center">
+            <div class="mb-14 text-center">
                 <h2 class="section-title section-title-center text-3xl md:text-4xl font-poppins">Skills</h2>
+                <p class="text-gray-400 mt-4 max-w-xl mx-auto text-base">
+                    A balanced blend of technical expertise and interpersonal strengths.
+                </p>
             </div>
-            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="glass-card p-6 rounded-2xl fade-up">
-                    <h3 class="text-xl font-poppins font-semibold text-gold mb-4">Technical</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-gold/10 text-gold px-3 py-1 rounded-full text-sm border border-gold/10">HTML5</span>
-                        <span class="bg-gold/10 text-gold px-3 py-1 rounded-full text-sm border border-gold/10">CSS3</span>
-                        <span class="bg-gold/10 text-gold px-3 py-1 rounded-full text-sm border border-gold/10">JavaScript</span>
-                        <span class="bg-gold/10 text-gold px-3 py-1 rounded-full text-sm border border-gold/10">React</span>
-                        <span class="bg-gold/10 text-gold px-3 py-1 rounded-full text-sm border border-gold/10">Responsive Web Design</span>
-                        <span class="bg-gold/10 text-gold px-3 py-1 rounded-full text-sm border border-gold/10">Git</span>
-                        <span class="bg-gold/10 text-gold px-3 py-1 rounded-full text-sm border border-gold/10">GitHub</span>
-                        <span class="bg-gold/10 text-gold px-3 py-1 rounded-full text-sm border border-gold/10">Microsoft Office</span>
-                        <span class="bg-gold/10 text-gold px-3 py-1 rounded-full text-sm border border-gold/10">Basic Computer Skills</span>
+
+            <div class="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+
+                <!-- Technical Skills Column -->
+                <div class="glass-card p-7 md:p-8 rounded-2xl fade-up">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-gold/10 border border-gold/25 flex items-center justify-center">
+                            <i class="fas fa-code text-gold text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-poppins font-semibold text-gold">Technical Skills</h3>
+                            <p class="text-xs text-gray-500 tracking-wide uppercase">Development &amp; Tools</p>
+                        </div>
+                    </div>
+
+                    <!-- Skill bars -->
+                    <div class="space-y-5">
+                        <div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-medium text-gray-200">HTML5</span>
+                                <span class="text-xs text-gold font-semibold">95%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-bar-fill" style="width: 95%;"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-medium text-gray-200">CSS3 / Tailwind</span>
+                                <span class="text-xs text-gold font-semibold">90%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-medium text-gray-200">JavaScript</span>
+                                <span class="text-xs text-gold font-semibold">82%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-bar-fill" style="width: 82%;"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-medium text-gray-200">Responsive Web Design</span>
+                                <span class="text-xs text-gold font-semibold">92%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-bar-fill" style="width: 92%;"></div></div>
+                        </div>
+                    </div>
+
+                    <!-- Tags for additional tools -->
+                    <div class="mt-7 pt-6 border-t border-gold/10">
+                        <p class="text-xs uppercase tracking-wider text-gray-500 mb-3 font-semibold">Tools &amp; Others</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag"><i class="fab fa-github"></i> GitHub</span>
+                            <span class="skill-tag"><i class="fas fa-file-excel"></i> Microsoft Office</span>
+                            <span class="skill-tag"><i class="fas fa-laptop"></i> Basic Computer Skills</span>
+                        </div>
                     </div>
                 </div>
-                <div class="glass-card p-6 rounded-2xl fade-up">
-                    <h3 class="text-xl font-poppins font-semibold text-gold mb-4">Soft</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-gold/10 text-gold px-3 py-1 rounded-full text-sm border border-gold/10">Communication</span>
-                        <span class="bg-gold/10 text-gold px-3 py-1 rounded-full text-sm border border-gold/10">Team Leadership</span>
-                        <span class="bg-gold/10 text-gold px-3 py-1 rounded-full text-sm border border-gold/10">Time Management</span>
-                        <span class="bg-gold/10 text-gold px-3 py-1 rounded-full text-sm border border-gold/10">Problem Solving</span>
-                        <span class="bg-gold/10 text-gold px-3 py-1 rounded-full text-sm border border-gold/10">Critical Thinking</span>
-                        <span class="bg-gold/10 text-gold px-3 py-1 rounded-full text-sm border border-gold/10">Fast Learner</span>
-                        <span class="bg-gold/10 text-gold px-3 py-1 rounded-full text-sm border border-gold/10">Teamwork</span>
-                        <span class="bg-gold/10 text-gold px-3 py-1 rounded-full text-sm border border-gold/10">Adaptability</span>
-                        <span class="bg-gold/10 text-gold px-3 py-1 rounded-full text-sm border border-gold/10">Professional Ethics</span>
+
+                <!-- Soft Skills Column -->
+                <div class="glass-card p-7 md:p-8 rounded-2xl fade-up">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-gold/10 border border-gold/25 flex items-center justify-center">
+                            <i class="fas fa-handshake text-gold text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-poppins font-semibold text-gold">Soft Skills</h3>
+                            <p class="text-xs text-gray-500 tracking-wide uppercase">Professional Strengths</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div class="soft-skill-card">
+                            <i class="fas fa-comments"></i>
+                            <span class="text-sm text-gray-200">Communication</span>
+                        </div>
+                        <div class="soft-skill-card">
+                            <i class="fas fa-users"></i>
+                            <span class="text-sm text-gray-200">Team Leadership</span>
+                        </div>
+                        <div class="soft-skill-card">
+                            <i class="fas fa-clock"></i>
+                            <span class="text-sm text-gray-200">Time Management</span>
+                        </div>
+                        <div class="soft-skill-card">
+                            <i class="fas fa-puzzle-piece"></i>
+                            <span class="text-sm text-gray-200">Problem Solving</span>
+                        </div>
+                        <div class="soft-skill-card">
+                            <i class="fas fa-brain"></i>
+                            <span class="text-sm text-gray-200">Critical Thinking</span>
+                        </div>
+                        <div class="soft-skill-card">
+                            <i class="fas fa-bolt"></i>
+                            <span class="text-sm text-gray-200">Fast Learner</span>
+                        </div>
+                        <div class="soft-skill-card">
+                            <i class="fas fa-people-arrows"></i>
+                            <span class="text-sm text-gray-200">Teamwork</span>
+                        </div>
+                        <div class="soft-skill-card">
+                            <i class="fas fa-sync-alt"></i>
+                            <span class="text-sm text-gray-200">Adaptability</span>
+                        </div>
+                        <div class="soft-skill-card sm:col-span-2">
+                            <i class="fas fa-balance-scale"></i>
+                            <span class="text-sm text-gray-200">Professional Ethics</span>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </section>
 
@@ -464,6 +733,57 @@
             </div>
         </section>
 
+        <!-- ==================== CERTIFICATIONS (SINGLE CERTIFICATE - CLICKABLE) ==================== -->
+        <section id="certifications" class="py-20 px-4 md:px-8 max-w-6xl mx-auto">
+            <div class="mb-14 text-center">
+                <h2 class="section-title section-title-center text-3xl md:text-4xl font-poppins">Certifications</h2>
+                <p class="text-gray-400 mt-4 max-w-xl mx-auto text-base">
+                    Continuous learning through recognised programmes and courses.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+                <!-- Certification 1 (ONLY ONE - CLICKABLE TO OPEN IMAGE) -->
+                <div class="cert-card glass-card p-6 rounded-2xl fade-up flex flex-col"
+                     id="cyberCertCard"
+                     role="button"
+                     tabindex="0"
+                     aria-label="View Introduction to Cybersecurity certificate">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-gold/10 border border-gold/25 flex items-center justify-center shrink-0">
+                            <i class="fas fa-shield-halved text-gold text-xl"></i>
+                        </div>
+                        <span class="cert-badge"><i class="fas fa-circle-check"></i> Verified</span>
+                    </div>
+                    <h3 class="text-lg font-poppins font-semibold text-gold leading-snug">Introduction to Cyber Security</h3>
+                    <p class="text-sm text-gray-400 mt-1">Cisco Networking Academy</p>
+                    <p class="text-xs text-gray-500 mt-3 leading-relaxed flex-1">
+                        Foundations of cybersecurity principles, threat landscape, and network security best practices.
+                    </p>
+                    <div class="mt-4 pt-3 border-t border-gold/10 flex items-center justify-between">
+                        <span class="text-xs text-gray-500">2026</span>
+                        <span class="text-xs text-gold/80 font-medium"><i class="fas fa-award mr-1"></i>Click to view certificate</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Certificate Lightbox Modal -->
+        <div class="cert-modal" id="certModal" aria-hidden="true" role="dialog" aria-label="Certificate viewer">
+            <div class="cert-modal-inner">
+                <button class="cert-modal-close" id="certModalClose" aria-label="Close certificate">
+                    <i class="fas fa-times"></i>
+                </button>
+                <!-- ⬇️ UPLOAD YOUR CERTIFICATE IMAGE HERE (replace the src below) ⬇️ -->
+                <img src="certificates/cybersecurity-certificate.png"
+                     alt="Introduction to Cyber Security Certificate"
+                     id="certModalImage" />
+                <p class="cert-modal-caption">Introduction to Cyber Security — Cisco Networking Academy (2026)</p>
+            </div>
+        </div>
+
         <!-- PROJECTS -->
         <section id="projects" class="py-20 px-4 md:px-8 max-w-7xl mx-auto">
             <div class="mb-14 text-center">
@@ -484,7 +804,7 @@
                     </div>
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold text-yellow-400">GTECH Main Website</h3>
-                        <p class="text-gray-400 mt-3 leading-relaxed">A modern business website with responsive layouts, smooth interactions, and a professional design.<n>Try this Gmail & Passwd  -Gmail:solar@gtech.com -Passsword:gtech537</n></p>
+                        <p class="text-gray-400 mt-3 leading-relaxed">A modern business website with responsive layouts, smooth interactions, and a professional design.</p>
                         <div class="flex flex-wrap gap-2 mt-5">
                             <span class="bg-yellow-500/10 text-yellow-300 px-3 py-1 rounded-full text-xs border border-yellow-500/20">HTML</span>
                             <span class="bg-yellow-500/10 text-yellow-300 px-3 py-1 rounded-full text-xs border border-yellow-500/20">CSS</span>
@@ -572,7 +892,7 @@
                     </div>
                     <div class="flex items-center gap-4">
                         <i class="fas fa-phone text-2xl text-gold"></i>
-                        <span>+92 3127726410</span>
+                        <span>+92 3126687002</span>
                     </div>
                     <div class="flex items-center gap-4">
                         <i class="fas fa-map-marker-alt text-2xl text-gold"></i>
@@ -582,7 +902,6 @@
                         <i class="fab fa-github text-2xl text-gold"></i>
                         <a href="https://github.com/syed123-sudo" target="_blank" class="hover:text-gold">syed123-sudo</a>
                     </div>
-                    <!-- CONTACT SECTION SOCIAL ICONS - FIXED LINKEDIN -->
                     <div class="flex gap-4 pt-2">
                         <a href="https://github.com/syed123-sudo" target="_blank" class="text-gray-400 hover:text-gold transition text-3xl"><i class="fab fa-github"></i></a>
                         <a href="https://www.linkedin.com/in/syeda-itrat-39b7a1373"
@@ -633,40 +952,35 @@
         // Contact Form Handler
         document.getElementById('contactForm').addEventListener('submit', function(event) {
             event.preventDefault();
-            
+
             const submitBtn = document.getElementById('submitBtn');
             const statusDiv = document.getElementById('formStatus');
-            
-            // Get form data
+
             const name = document.getElementById('name').value.trim();
             const from_email = document.getElementById('from_email').value.trim();
             const title = document.getElementById('title').value.trim();
             const message = document.getElementById('message').value.trim();
-            
-            // Validate form
+
             if (!name || !from_email || !title || !message) {
                 statusDiv.innerHTML = '⚠️ Please fill in all fields.';
                 statusDiv.className = 'text-center text-sm mt-2 text-yellow-400';
                 return;
             }
-            
-            // Show loading state
+
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
             submitBtn.disabled = true;
             statusDiv.innerHTML = '';
             statusDiv.className = 'text-center text-sm mt-2';
-            
-            // Prepare template parameters matching your template variables
+
             const templateParams = {
                 from_email: from_email,
                 title: title,
                 name: name,
                 message: message
             };
-            
+
             console.log('📧 Sending email with params:', templateParams);
-            
-            // Send email using EmailJS
+
             emailjs.send('service_n8cn6po', 'template_9uvdlq6', templateParams)
                 .then(function(response) {
                     console.log('✅ SUCCESS!', response.status, response.text);
@@ -678,14 +992,14 @@
                 })
                 .catch(function(error) {
                     console.error('❌ FAILED:', error);
-                    
+
                     let errorMessage = '❌ Failed to send message. ';
                     if (error.text) {
                         errorMessage += `Error: ${error.text}`;
                     } else {
                         errorMessage += 'Please try again or email me directly at ifsyed66@gmail.com';
                     }
-                    
+
                     statusDiv.innerHTML = errorMessage;
                     statusDiv.className = 'text-center text-sm mt-2 text-red-400';
                     submitBtn.innerHTML = '<i class="fas fa-paper-plane mr-2"></i>Send Message';
@@ -693,10 +1007,58 @@
                 });
         });
 
-        // Mobile menu toggle
+        // ==================== CERTIFICATE MODAL LOGIC ====================
+        const certCard = document.getElementById('cyberCertCard');
+        const certModal = document.getElementById('certModal');
+        const certModalClose = document.getElementById('certModalClose');
+
+        function openCertModal() {
+            certModal.classList.add('open');
+            certModal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCertModal() {
+            certModal.classList.remove('open');
+            certModal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+
+        // Click on the certificate card
+        certCard.addEventListener('click', openCertModal);
+
+        // Keyboard support (Enter / Space)
+        certCard.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openCertModal();
+            }
+        });
+
+        // Close button
+        certModalClose.addEventListener('click', function(e) {
+            e.stopPropagation();
+            closeCertModal();
+        });
+
+        // Click on backdrop (outside the image) closes modal
+        certModal.addEventListener('click', function(e) {
+            if (e.target === certModal) {
+                closeCertModal();
+            }
+        });
+
+        // Escape key closes modal
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && certModal.classList.contains('open')) {
+                closeCertModal();
+            }
+        });
+
+        // ==================== MOBILE MENU ====================
         const mobileToggle = document.getElementById('mobileMenuToggle');
         const mobileMenu = document.getElementById('mobileMenu');
-        
+
         mobileToggle.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
             const icon = mobileToggle.querySelector('i');
@@ -716,7 +1078,7 @@
         });
 
         // Active nav link highlight
-        const sections = ['home', 'about', 'education', 'skills', 'experience', 'projects', 'contact'];
+        const sections = ['home', 'about', 'education', 'skills', 'experience', 'certifications', 'projects', 'contact'];
         const navLinks = document.querySelectorAll('.nav-link');
 
         function updateActiveSection() {
